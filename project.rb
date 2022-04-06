@@ -1,4 +1,20 @@
 =begin
+What to do next 
+    1. look at the raven function and make the if else looks functions so they can be called again if the user does not input the right number 
+    2. For boba function 
+        - add a toppings function  
+        - ask a sugar level function
+        - try using switch statements to see how that goes
+    3. for ice cream function
+        - make a cone or cup function
+        - make a toppings option 
+        - use switch and case satements 
+    4. test out code
+        - look at $scores to make sure values are added 
+=end
+
+
+=begin
 this is the global variable for holding the "scores" bt is to keep track of the players choices throughout the game 
 so at the end it can calculate the average score of the user to give them a major choice
 =end
@@ -6,7 +22,7 @@ $score = []
 
 # class for the day downtown event with the functions needed to run the event inside
 class Downtown 
-    def raven ()
+    def raven()
         print "You walk into Ravens bookstore and you're greeted with an array of books. "
         print "What book do you plan to buy? \n"
         print "1. Manga \n2. A history book going in indepth detail on the history of the French Revolution \n3. A rock guide \n4. A picture book \n"
@@ -98,6 +114,66 @@ class Downtown
         end 
     end
 
+    # what i want to add to boba funcction
+    # add a function for drink toppings (use switch and cases to try something new)
+    # add a function for sugar level (try switch and cases)
+    def boba ()
+        puts "You walk into Lime Red, and see a bunch of drinks that you want to try. What will you get? "
+        puts "1. Taro \n2. Matcha \n3. Chai \n4. Call a friend"
+        choice = gets.chomp
+        choice = choice.to_i
+        if choice == 1
+            $score << choice
+            puts "You go with Taro, and the purple makes you feel happy. You decide you want to enjoy a walk with your ew drink but somehow end up lost ... \
+        you'll find your way back eventually. Right? "
+        elsif choice == 2
+            $score << choice
+            puts "Matcha! The green makes you want to go walk around. Is it because the green reminds you of nature or because it because matcha has more caffine than \
+            coffee? "
+        elsif choice == 3
+            $score << choice
+            puts "The classic Chai! You wonder if it is the same color as the orange you had for breakfast. You had cereal? Well then your cereal was orange. "
+        elsif choice == 4
+            $score << choice 
+            puts "You call your friend and ask them to pick your drink! They make you get every single topping they offer ... you can't even \
+            taste the drink anymore ... "
+        else 
+            puts "That is not a choice please try again. "
+            boba()
+        end
+    end
+
+    # what i want to add to ice cream function
+    # A function that asks if they want a spoon or a cup (try switch and case)
+    # a function that asks about toppings 
+    # for the guess about birthday: maybe a random number hing where they have to guess a number from 1 to ten and if they get it right, they win
+    def icecream()
+        puts "You walk into Herrell's that you've been hearing people talk about. What d you get? "
+        puts "1. Vanilla \n2. Chocolate \n3. Coffee \n4. Say it's your birthday and see if you get free ice cream "
+        choice = gets.chomp
+        choice = choice.to_i
+        if choice == 1
+            $score << choice
+            puts "You decide to load the ice cream with toppings. "
+       
+        elsif choice == 2 
+            $score << choice
+            puts "You somehow don't trip and drop your ice cream. "
+        
+        elsif choice == 3
+            $score << choice
+            puts "You still want caffine in your ice cream? Please sleep. "
+        
+        elsif choice == 4 
+            $score << choice
+            puts "You somehow messed up the date and the weekday when asked when is your birthday. You leave in embarassment. No ice cream for you :( "
+          
+        else
+          puts "That is not a choice. Please try again. "
+          icecream()
+        end
+    end 
+
     # this is the first part of the event that asks the user where they want to go and will branch off into different things
     def down () 
         puts "You now have your first day downtown for the semester. Where do you plan to go? "
@@ -139,6 +215,7 @@ calling classes: https://stackoverflow.com/questions/2527830/ruby-calling-class-
 array <<: http://ruby-for-beginners.rubymonstas.org/built_in_classes/arrays.html
 classes and objects: https://launchschool.com/books/oo_ruby/read/classes_and_objects_part2 
 multiline strings: https://www.designcise.com/web/tutorial/how-to-create-multiline-strings-in-ruby 
+matcha fun facts: https://www.znaturalfoods.com/blogs/articles/fun-facts-about-matcha-green-tea 
 
 
 =end
