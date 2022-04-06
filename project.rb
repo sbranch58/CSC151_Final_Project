@@ -1,6 +1,6 @@
 =begin
 What to do next 
-    1. look at the raven function and make the if else looks functions so they can be called again if the user does not input the right number 
+    1. look at the raven function and make the if else looks functions so they can be called again if the user does not input the right number (should they be normal functions or nested functions)
     2. For boba function 
         - add a toppings function  
         - ask a sugar level function
@@ -11,6 +11,7 @@ What to do next
         - use switch and case satements 
     4. test out code
         - look at $scores to make sure values are added 
+    5. fix the multiline strings 
 =end
 
 
@@ -28,8 +29,35 @@ class Downtown
         print "1. Manga \n2. A history book going in indepth detail on the history of the French Revolution \n3. A rock guide \n4. A picture book \n"
         choice = gets.chomp
         choice = choice.to_i 
-        if choice == 1 
-            $score << choice
+        def snack()
+            print "Oh no! You completely missed dinner because after reading the manga you started to go into a vicious fan cycle and fall down the \
+            rabbit hole of a new series. There are only snacks left in your room, but what snack do you eat. \n"
+            print "1. Popcorn \n2. Goldfish \n3. Sour Patch Kids \n4. Nothing, you're gonna munch on the best snack, air \n"
+            choice = gets.chomp
+            choice = choice.to_i
+            if choice == 1 
+                $score << choice
+                print "You pop your popcorn and the smell goes through your dorm and makes you feel like you wanna watch a movie, but you cant since \
+                you have classes tomorrow. You enjoy your popcorn and then go to bed at 3am. \n"
+                # puts "the value of choice1 is: #{choice}" 
+            elsif choice == 2
+                $score << choice 
+                print "You grab your goldfish and the do a dramatic story of the goldfish trying to fight against the giant monster (you) to not be eaten. \
+                They tragically lose as you eat your snack. You then go to bed at 4am because your story took 2 more hours. \n"
+            elsif choice == 3
+                $score << choice 
+                print "Since you have candy and decide you need sugar to stay up to keep up your intense research of the series. You somehow eat all of the candy \
+                in one go, but keep falling down the rabbit hole, and do not sleep. \n"
+            elsif choice == 4
+                $score << choice
+                print "The air is so fresh, so flavorful, so airy. After eating your filling air, you pass out right after. \n"
+            else
+                print "This is not a choice. Please try again. \n"
+                snack()
+            end 
+        end
+
+        def manga()
             print "You've acquired a new manga! You now go back to your dorm to read the newest manga you've collected and spend the whole day eating it. \
             but it is now dinner time and you are only half way done, what do you do? \n"
             print "1. Go to the dining hall \n2. Keep reading \n"
@@ -40,6 +68,79 @@ class Downtown
                 print "You go to the dining hall and eat a \"nice\" dinner. You're able to go back to your room and get a good rest for classes toromorrow. \n"
             elsif choice == 2
                 $score << choice
+                snack()
+            else
+                print "That is not a choice. Please try again. \n"
+                manga()
+            end
+        end
+
+        def history()
+            print "You now own a heavy history book. What does one even do with history books? \n"
+            print "1. You read it obviously \n2. Pillow \n3. See how far you can throw it \n"
+            choice = gets.chomp
+            choice = choice.to_i 
+            if choice == 1
+                $score << choice
+                print "You are now an expert on the French Reveloution. \n" 
+            elsif choice == 2
+                $score << choice 
+                print "You go to a cafe near by, put the book down gently on the table, then immediately pass out on the book until closing. \
+                You are now known as the Sleeping Beauty in that cafe. \n"
+            elsif choice == 3
+                $score << choice 
+                print "You walk back to campus and call all your friends over to the center of Chapin Lawn and start throwng the book around like a frisbee \
+                to see who has the strongest throw. You win against your friends. \n"
+            else
+                print "This is not a choice. Please try again. \n"
+                history()
+            end
+        end 
+
+        def rock()
+            # make an array that gives a random index to display for rock results
+            puts "You find a place to sit and start reading your rock guide. There is a quiz at the end that asks you what type of rock \
+            you are. You take it and your result is ... "
+            possible_rocks = ["You get poodle somehow. It isn't even a rock, how did you do that? ", "Pebble. Is this book making fun of you? ", "A rock shaped like a penguin. "]
+            rand_num = rand(0..2)
+            your_rock = possible_rocks[rand_num]
+            return your_rock
+        end
+
+        def picture()
+            print "Picture books! Though called childish, you find them fun! You decide you want to share this with your friends, what do you do? \n"
+            print "1. Force them to do a dramatic renactment of the book \n2. Talk to them abot a new book that while being a picture book, is interesting \n"
+            choice = gets.chomp
+            choice = choice.to_i
+            if choice == 1
+                $score << choice
+                print "You guys put your heart into this play and are no making it into an actual script to share with the world! \n"
+            elsif choice == 2
+                $score << choice
+                print "As you tell your friends about the picture book, you start saying some of the line in a dramatic voice, and they soon join you. You realize \
+                you guys are acting out the play and that choice is an illusion. \n"     
+            else
+                print "This is not a choice. Please try again. \n"
+                picture()
+            end
+        end
+        
+        
+        if choice == 1 
+            $score << choice
+            # print "You've acquired a new manga! You now go back to your dorm to read the newest manga you've collected and spend the whole day eating it. \
+            # but it is now dinner time and you are only half way done, what do you do? \n"
+            # print "1. Go to the dining hall \n2. Keep reading \n"
+            # choice = gets.chomp
+            # choice = choice.to_i
+            if choice == 1
+                $score << choice
+                manga()
+=begin
+                print "You go to the dining hall and eat a \"nice\" dinner. You're able to go back to your room and get a good rest for classes toromorrow. \n"
+            elsif choice == 2
+                $score << choice
+
                 print "Oh no! You completely missed dinner because after reading the manga you started to go into a vicious fan cycle and fall down the \
                 rabbit hole of a new series. There are only snacks left in your room, but what snack do you eat. \n"
                 print "1. Popcorn \n2. Goldfish \n3. Sour Patch Kids \n4. Nothing, you're gonna munch on the best snack, air \n"
@@ -64,11 +165,16 @@ class Downtown
                 else
                     print "This is not a choice. Please try again. \n"
                 end 
+
             else
                 print "That is not a choice. Please try again. \n"
             end
+=end
+
         elsif choice == 2
             $score << choice 
+            history()
+=begin 
             print "You now own a heavy history book. What does one even do with history books? \n"
             print "1. You read it obviously \n2. Pillow \n3. See how far you can throw it \n"
             choice = gets.chomp
@@ -87,12 +193,18 @@ class Downtown
             else
                 print "This is not a choice. Please try again. \n"
             end
+=end 
         elsif choice == 3
             $score << choice
+            puts rock()
+=begin
             print "You find a place to sit and start reading your rock guide. There is a quiz at the end that asks you what rock type are you and you take \
             it and get poodle some how. It isn't even a rock, how did you do that? \n"
+=end
         elsif choice == 4
             $score << choice 
+            picture()
+=begin
             print "Picture books! Though called childish, you find them fun! You decide you want to share this with your friends, what do you do? \n"
             print "1. Force them to do a dramatic renactment of the book \n2. Talk to them abot a new book that while being a picture book, is interesting \n"
             choice = gets.chomp
@@ -107,6 +219,7 @@ class Downtown
             else
                 print "This is not a choice. Please try again. \n"
             end
+=end
         else
             print "This is not a choice. Please try again. \n"
             raven()
@@ -188,11 +301,13 @@ class Downtown
         if choice == 1 
             $score << choice
             # puts "the value of choice1 is: #{choice}"
-            raven() 
+            #raven() 
         elsif choice == 2
             $score << choice 
+            #boba()
         elsif choice == 3
             $score << choice 
+            #icecream()
         else
             print "This is not a choice. Please try again. \n"
             down()
@@ -201,12 +316,16 @@ class Downtown
         print "the value of score is #{$score} \n"
         print "This is the end to your first day in Northampton. Hopefully it was good and you are well rested, or maybe not :( "
     end 
+    #Downtown.new.down()
 end 
 
+Downtown.new.raven()
+#Downtown.new.down()
+#Downtown.down()
+end 
 
-Downtown.new.down()
+#Downtown.new.down()
 #down()
-
 =begin
 Links: 
 to_int: https://reactgo.com/ruby-convert-string-to-integer/#:~:text=To%20convert%20an%20string%20to%20a%20integer%2C%20we%20can%20use,number%20then%20it%20returns%200.
@@ -216,6 +335,9 @@ array <<: http://ruby-for-beginners.rubymonstas.org/built_in_classes/arrays.html
 classes and objects: https://launchschool.com/books/oo_ruby/read/classes_and_objects_part2 
 multiline strings: https://www.designcise.com/web/tutorial/how-to-create-multiline-strings-in-ruby 
 matcha fun facts: https://www.znaturalfoods.com/blogs/articles/fun-facts-about-matcha-green-tea 
-
+multiline comments: https://stackoverflow.com/questions/2989762/multi-line-comments-in-ruby
+random num: https://blog.appsignal.com/2018/07/31/generating-random-numbers-in-ruby.html
 
 =end
+
+
