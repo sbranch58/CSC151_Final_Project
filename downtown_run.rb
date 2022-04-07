@@ -1,8 +1,14 @@
 require '/../Users/sarah/Desktop/CSC151/FinalProject/Code/downtown_functions.rb'
 
+=begin
+this is the global variable for holding the "scores" bt is to keep track of the players choices throughout the game 
+so at the end it can calculate the average score of the user to give them a major choice
+=end
 $score = []
 
+# class for the day downtown event with the functions needed to run the event inside
 class Downtown
+    # this is the first part of the event that asks the user where they want to go and will branch off into different things
     def down() 
         puts "You now have your first day downtown for the semester. Where do you plan to go? "
         print "1. Raven Bookstore \n2. Lime Red to get boba tea \n3. Getting ice cream at Herrell's \n"

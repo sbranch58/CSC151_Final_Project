@@ -124,6 +124,54 @@ def raven()
     end 
 end
 
+def boba_topping()
+    puts "It is now time to pick your toppings! "
+    print "1. None \n2. Boba \n3. Popping Boba \n"
+    choice = gets.chomp 
+    choice = choice.to_i 
+    case choice
+    when 1 
+        $score << choice
+        puts "Isn't that just milk tea? "
+    when 2 
+        $score << choice 
+        puts "The original! "
+    when 3
+        $score << choice 
+        puts "Lets hope the flavors go with your tea! "
+    else
+        puts "That is not a choice. Please try again. "
+        boba_topping()
+    end 
+end
+
+def sugar_level()
+    puts "Sweetness is important to any drink. How sweet will your boba be? "
+    print "1. 0% \n2. 25% \n3. 50% \n4. 75% \n5. 100% \n"
+    choice = gets.chomp 
+    choice = choice.to_i 
+    case choice 
+    when 1 
+        $score << choice
+        puts "Almost as sweet as you :) "
+    when 2
+        $score << choice
+        puts "Just a slight bit of sugar. "
+    when 3 
+        $score << choice
+        puts "According to some, the sweetness to go with. "
+    when 4 
+        $score << choice
+        puts "I was told to tell you you're pushing it with the sweetness. "
+    when 5 
+        $score << choice
+        puts "I was told to tell you you're a heathen,. "
+    else
+        puts "That is not a choice. Please try again. "
+        sugar_level()
+    end 
+end
+
     # what i want to add to boba funcction
     # add a function for drink toppings (use switch and cases to try something new)
     # add a function for sugar level (try switch and cases)
@@ -153,6 +201,82 @@ def boba ()
     end
 end
 
+def waffle_cone()
+    puts "Are you one of those people who eat waffle cones or throw them? " 
+    print "1. Eat it \n2. Throw it out \n"
+    choice = gets.chomp
+    choice = choice.to_i
+    case choice 
+    when 1
+        $score << choice
+        puts "Yay for waffle cones! "
+    when 2
+        $score << choice
+        puts "How could you? They took so much time to make ... "
+    else 
+        puts "That is not a choice. Please try again. "
+        waffle_cone()
+    end
+end
+
+def cone() 
+    puts "You order your ice cream flavor, but will you get it in a cone or a cup. \n"
+    print "1. Regular sugar cone \n2. Waffle cone \n3. Cup \n"
+    choice = gets.chomp 
+    choice = choice.to_i
+
+    case choice 
+    when 1
+        $score << choice 
+        puts "Let's hope you don't trip and rop your cone when you get it. "
+    when 2 
+        $score << choice
+        waffle_cone()
+    when 3 
+        $score << choice
+        puts "No ice cream dripping down for you. "
+
+    else
+      puts "This is not a choice. Please try again. "
+      cone()
+    end
+end 
+
+def icecream_topping()
+    puts "Now that you have your ice cream flavor and vehicle for eating, what will you top your ice cream with? "
+    print "1. Rainbow sprinkles \n2. Chocolate sprinkles 3. All the toppings \n"
+    choice = gets.chomp
+    choice = choice.to_i
+    case choice 
+    when 1
+        $score << choice
+        puts "Ooooo bright colors. "
+    when 2
+        $score << choice
+        puts "You might be one of the people who argue about Fruity Pebbles and Coco Pebbles. "
+    when 3 
+        $score << choice
+        puts "You menance. Look at that poor worker putting all the toppings on your ice cream. How will you even eat that?"
+    else
+        puts "That is not a choice. Please try again. "
+        icecream_topping()
+    end
+end
+
+def birthday()
+    rand_num = rand(1..10)
+    puts "The worker asks you what's your birthday (even though it is implied it is today, but lets not pay attention to logistics). \
+    Pick a number from 1 to 10, if you're right you'll get your ice cream! "
+    print "What is your guess? "
+    guess = gets.chomp
+    guess = guess.to_i
+
+    if guess == rand_num
+        puts "You are correct! You get your free ice cream and now have multiple birthdays. "      
+    else
+        puts "You somehow messed up the date and the weekday when asked when is your birthday. You leave in embarassment. No ice cream for you :( "     
+    end
+end
     # what i want to add to ice cream function
     # A function that asks if they want a spoon or a cup (try switch and case)
     # a function that asks about toppings 
@@ -165,15 +289,22 @@ def icecream()
     if choice == 1
         $score << choice
         puts "You decide to load the ice cream with toppings. "
+        cone()
+        icecream_topping()
     elsif choice == 2 
         $score << choice
         puts "You somehow don't trip and drop your ice cream. "  
+        cone()
+        icecream_topping()
     elsif choice == 3
         $score << choice
         puts "You still want caffine in your ice cream? Please sleep. " 
+        cone()
+        icecream_topping()
     elsif choice == 4 
         $score << choice
-        puts "You somehow messed up the date and the weekday when asked when is your birthday. You leave in embarassment. No ice cream for you :( "   
+        birthday()
+        # puts "You somehow messed up the date and the weekday when asked when is your birthday. You leave in embarassment. No ice cream for you :( "   
     else
         puts "That is not a choice. Please try again. "
         icecream()
