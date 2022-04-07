@@ -1,0 +1,75 @@
+# Draft for mountain day screen
+
+
+#Introduction to mountain day 
+puts 'Ringing the bells!'
+puts 'You wake up to the sound of ringing bells...its Mountain Day! What are your plans on this glorious day?'
+
+threeOptions ="1. Orchard
+You want to go pick some apples..head to the orchard!
+
+2. Baking
+Your house wants to do some community cooking with all the apples!
+
+3. Hiking
+The weather is so nice...lets go hiking!" ;
+
+puts threeOptions
+while true
+  choice = gets.chomp
+  case choice  #switch statement for the options
+  when "Orchard"
+    orchardVisit()
+  when "Baking"
+    houseBaking()
+  when "Hiking"
+    outdoorHiking()
+  end
+end
+  
+#choices for visiting the apple orchard 
+def orchardVisit()
+  puts "Welcome to the orchard, we are glad you are here! What do you want to do"
+  choice = gets.chomp
+  
+  case choice 
+  when "Pick some apples"
+    puts "You pick bushels of apples that you plan to make into treats!" 
+    #graphics 
+  when "Visit the farm"
+    puts "The orchard has a adjacent farm and you help out with the feeding of animals"
+  when "Eat donuts"
+    puts "The orchard has homemade apple cider donuts - lets have a picnic" 
+  end
+end
+
+#choices for doing baking with your house 
+def houseBaking()
+  puts "You got the apples, it is now time to make a sweet treat! What will your house make?"
+  choice = gets.chomp
+  
+  case choice 
+  when "Apple pie!"
+    puts "Your amazing baking skills made 3 perfect pies"
+    #graphics 
+  when "Apple crumble!"
+    puts "You can't go wrong with apple crumble and vanilla ice cream"
+  when "Apple tarts!"
+    puts "Yummy bite-size tarts for everyone" 
+  end
+end
+
+def outdoorHiking()
+  puts "you"
+  choice = gets.chomp
+  
+  case choice 
+  when "Somewhere local..Paradise Pond"
+    puts "After the hiking, lets go kayaking"
+    #graphics 
+  when "Holyoke State Park in Holyoke"
+    puts "30 miles of blazed trails...Holyoke State Park is the place"
+  when "Amherst"
+    puts "Visit the beauty  at Amherst's Robert Frost Trail" 
+  end
+end
