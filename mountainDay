@@ -7,13 +7,14 @@ def orchardVisit()
    3. Eat donuts"
   puts orchardOptions
   choice = gets.chomp
+  choice = choice.get_i
   
   case choice #switch statement
-  when "1"
+  when 1
     puts "You pick bushels of apples that you plan to make into treats!" 
-  when "2"
+  when 2
     puts "The orchard has a adjacent farm and you help out with the feeding of animals"
-  when "3"
+  when 3
     puts "The orchard has homemade apple cider donuts - lets have a picnic" 
   end
 end
@@ -27,13 +28,14 @@ def houseBaking()
    3. Apple Tarts"
   puts bakingOptions
   choice = gets.chomp
+  choice = choice.get_i
   
   case choice  #switch statement
-  when "1"
+  when 1
     puts "Your amazing baking skills made 3 perfect pies"
-  when "2"
+  when 2
     puts "You can't go wrong with apple crumble and vanilla ice cream"
-  when "3"
+  when 3
     puts "Yummy bite-size tarts for everyone" 
   end
 end
@@ -47,13 +49,14 @@ def outdoorHiking()
    3. Robert Frost Trail in Amherst"
   puts hikingOptions
   choice = gets.chomp
+  choice = choice.get_i
   
   case choice #switch statement
-  when "1"
+  when 1
     puts "Somewhere local...after the hiking, lets go kayaking"
-  when "2"
+  when 2
     puts "30 miles of blazed trails...Holyoke State Park is the place"
-  when "3"
+  when 3
     puts "Visit the beauty  at Amherst's Robert Frost Trail" 
   end
 end
