@@ -60,5 +60,5 @@ end
 Downtown.new.down()
 #puts "run snack() "
 #snack()
-# print "the value of score is #{$score} \n"
+print "the value of score is #{$score} \n"
 print "This is the end to your first day in Northampton. Hopefully it was good and you are well rested, or maybe not :( "

@@ -355,8 +355,8 @@ git link about branches: https://git-scm.com/book/en/v2/Git-Branching-Basic-Bran
 git remote stuff: https://learn.co/lessons/git-remote-code-along
 git push video: https://www.youtube.com/watch?v=wrb7Gge9yoE
 about refs error: https://articles.assembla.com/en/articles/748133-failed-to-push-some-refs-git-error
-
-
+.sample for arrays: https://apidock.com/ruby/v2_5_5/Array/sample 
+random element in array with .sample: https://stackoverflow.com/questions/3482149/how-do-i-pick-randomly-from-an-array
 =end
 
 
