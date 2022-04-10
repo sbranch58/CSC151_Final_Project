@@ -7,25 +7,26 @@
 def snack()
     print "Oh no! You completely missed dinner because after reading the manga you started to go into a vicious fan cycle and fall down the 
     rabbit hole of a new series. There are only snacks left in your room, but what snack do you eat. \n"
-    print "1. Popcorn \n2. Goldfish \n3. Sour Patch Kids \n4. Nothing, you're gonna munch on the best snack: air \n"
+    print "1. Candy \n2. Nothing, you're gonna munch on the best snack: air \n3. Popcorn \n4. Goldfish \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp
     choice = choice.to_i
     if choice == 1 
         $score << choice
-        print "You pop your popcorn and the smell goes through your dorm and makes you feel like you wanna watch a movie, but you can't since \
-        you have classes tomorrow. You enjoy your popcorn and then go to bed at 3am. \n"
+        print "Since you have candy and decide you need sugar to stay up to keep up your intense research of the series going. You somehow eat all of the candy \
+        in one go, but keep falling down the rabbit hole of manga, and do not sleep. \n"
         # puts "the value of choice1 is: #{choice}" 
     elsif choice == 2
         $score << choice 
-        print "You grab your Goldfish and the do a dramatic story of the goldfish trying to fight against the giant monster (you) to not be eaten. \
-        They tragically lose as you eat your snack. You then go to bed at 4am because your story took 2 hours to tell. \n"
+        print "The air is so fresh, so flavorful, so airy. After eating your filling air, you pass out right after. \n"
     elsif choice == 3
         $score << choice 
-        print "Since you have candy and decide you need sugar to stay up to keep up your intense research of the series going. You somehow eat all of the candy \
-        in one go, but keep falling down the rabbit hole of manga, and do not sleep. \n"
+        print "You grab your Goldfish and the do a dramatic story of the goldfish trying to fight against the giant monster (you) to not be eaten. \
+        They tragically lose as you eat your snack. You then go to bed at 4am because your story took 2 hours to tell. \n"
     elsif choice == 4
         $score << choice
-        print "The air is so fresh, so flavorful, so airy. After eating your filling air, you pass out right after. \n"
+        print "You pop your popcorn and the smell goes through your dorm and makes you feel like you wanna watch a movie, but you can't since \
+        you have classes tomorrow. You enjoy your popcorn and then go to bed at 3am. \n"
     else
         print "This is not a choice. Please try again. \n"
         snack()
@@ -37,6 +38,7 @@ def manga()
     print "You've acquired a new manga! You now go back to your dorm to read the newest manga you've collected and spend the whole day reading it. \
     But it is now dinner time and you are only half way done, what do you do? \n"
     print "1. Go to the dining hall \n2. Keep reading \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp
     choice = choice.to_i
     if choice == 1
@@ -54,20 +56,21 @@ end
 # part of raven(). For when user chooses to get a history book and choices they can ake after 
 def history()
     print "You now own a heavy history book. What does one even do with a history book? \n"
-    print "1. You read it obviously \n2. Pillow \n3. See how far you can throw it \n"
+    print "1. Pillow \n2. See how far you can throw it \n3. You read it obviously \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp
     choice = choice.to_i 
     if choice == 1
         $score << choice
-        print "You are now an expert on the French Reveloution. \n" 
-    elsif choice == 2
-        $score << choice 
         print "You go to a cafe nearby, put the book down gently on the table, then immediately pass out on the book until closing. \
         You are now known as the Sleeping Beauty in that cafe. \n"
-    elsif choice == 3
+    elsif choice == 2
         $score << choice 
         print "You walk back to campus and call all your friends over to the center of Chapin Lawn and start throwng the book around like a frisbee \
         to see who has the strongest throw. You win against your friends. \n"
+    elsif choice == 3
+        $score << choice 
+        print "You are now an expert on the French Reveloution. \n" 
     else
         print "This is not a choice. Please try again. \n"
         history()
@@ -89,16 +92,17 @@ end
 # part of raven(). for when user picks picture book and gives more choices of what to do after getting one
 def picture()
     print "Oh book of pictures, what secrets do you hold! Though called childish, you find them fun! You decide you want to share this with your friends, what do you do? \n"
-    print "1. Force them to do a dramatic renactment of the book with you \n2. Talk to them abot a new book you found that while being a picture book, is interesting in a normal, and appropriate manner \n"
+    print "1. Talk to them abot a new book you found that while being a picture book, is interesting in a normal, and appropriate manner \n2. Force them to do a dramatic renactment of the book with you \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp
     choice = choice.to_i
     if choice == 1
         $score << choice
-        print "You guys put your heart into this play and are planning on making it into an actual script to share with the world! \n"
-    elsif choice == 2
-        $score << choice
         print "As you tell your friends about the picture book, you start saying some of the line in a dramatic voice, and they soon join you. You realize \
-        you guys are acting out the play and that choice is an illusion. \n"     
+        you guys are acting out the play and that choice is an illusion. \n" 
+    elsif choice == 2
+        $score << choice  
+        print "You guys put your heart into this play and are planning on making it into an actual script to share with the world! \n"   
     else
         print "This is not a choice. Please try again. \n"
         picture()
@@ -109,7 +113,8 @@ end
 def raven()
     print "You walk into Ravens bookstore and you're greeted with an array of books. "
     print "What book do you plan to buy? \n"
-    print "1. Manga \n2. A history book going in indepth detail on the history of the French Revolution \n3. A rock guide \n4. A picture book \n"
+    print "1. Manga \n2. A rock guide \n3. A history book going in indepth detail on the history of the French Revolution \n4. A picture book \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp
     choice = choice.to_i   
     if choice == 1 
@@ -119,11 +124,11 @@ def raven()
     elsif choice == 2
         $score << choice 
         # puts "run history "
-        history()
+        puts rock()
     elsif choice == 3
         $score << choice
         # puts "run rock"
-        puts rock()
+        history()
 
     elsif choice == 4
         $score << choice 
@@ -139,6 +144,7 @@ end
 def boba_topping()
     puts "It is now time to pick your toppings! "
     print "1. None \n2. Boba \n3. Popping Boba \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp 
     choice = choice.to_i 
     case choice
@@ -161,6 +167,7 @@ end
 def sugar_level()
     puts "Sweetness is important to any drink. How sweet will your boba be? "
     print "1. 0% \n2. 25% \n3. 50% \n4. 75% \n5. 100% \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp 
     choice = choice.to_i 
     case choice 
@@ -188,7 +195,8 @@ end
 # ask user what flavor they want and combines boba_topping() and sugar_level()
 def boba ()
     puts "You walk into Lime Red, and see a bunch of drinks that you want to try. What will you get? "
-    puts "1. Taro \n2. Matcha \n3. Chai \n4. Call a friend"
+    puts "1. Taro \n2. Call a friend \n3. Chai \n4. Matcha"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp
     choice = choice.to_i
     if choice == 1
@@ -199,10 +207,10 @@ def boba ()
         boba_topping()
     elsif choice == 2
         $score << choice
-        puts "Matcha! The green makes you want to go walk around. Is it because the green reminds you of nature or because it because matcha has more caffine than \
-        coffee? "
-        sugar_level()
-        boba_topping()
+        puts "You call your friend and ask them to pick your drink! They make you get every single topping they offer ... you can't even \
+        taste the drink anymore ... "
+        # sugar_level()
+        # boba_topping()
     elsif choice == 3
         $score << choice
         puts "The classic Chai! You wonder if it is the same color as the orange you had for breakfast. You had cereal? Well then your cereal was orange. "
@@ -210,10 +218,10 @@ def boba ()
         boba_topping
     elsif choice == 4
         $score << choice 
-        puts "You call your friend and ask them to pick your drink! They make you get every single topping they offer ... you can't even \
-        taste the drink anymore ... "
-        # sugar_level()
-        # boba_topping()
+        puts "Matcha! The green makes you want to go walk around. Is it because the green reminds you of nature or because it because matcha has more caffine than \
+        coffee? "
+        sugar_level()
+        boba_topping()
 
     else 
         puts "That is not a choice. Please try again. "
@@ -223,8 +231,9 @@ end
 
 # for cone() when user picks to have a waffle cone
 def waffle_cone()
-    puts "Are you one of those people who eat waffle cones or throw them? " 
+    puts "Are you one of those people who eat waffle cones or throw them out? " 
     print "1. Eat it \n2. Throw it out \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp
     choice = choice.to_i
     case choice 
@@ -244,6 +253,7 @@ end
 def cone() 
     puts "You order your ice cream flavor, but will you get it in a cone or a cup. \n"
     print "1. Regular sugar cone \n2. Waffle cone \n3. Cup \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp 
     choice = choice.to_i
 
@@ -266,7 +276,8 @@ end
 # for icecream(). ask user about toppings for icecream 
 def icecream_topping()
     puts "Now that you have your ice cream flavor and vehicle for eating, what will you top your ice cream with? "
-    print "1. Rainbow sprinkles \n2. Chocolate sprinkles 3. All the toppings \n"
+    print "1. Rainbow sprinkles \n2. Chocolate sprinkles \n3. All the toppings \n"
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp
     choice = choice.to_i
     case choice 
@@ -292,6 +303,7 @@ def birthday()
     puts "The worker asks you what's your birthday (even though it is implied it is today, but lets not pay attention to logistics). \
     Pick a number from 1 to 10, if you're right you'll get your ice cream! "
     print "What is your guess? "
+    # puts "the random number is #{rand_num}"
     guess = gets.chomp
     guess = guess.to_i
 
@@ -305,7 +317,8 @@ end
 # for when user goes to herell's. combines cone() and icecream_topping()
 def icecream()
     puts "You walk into Herrell's that you've been hearing people talk about. What do you get? "
-    puts "1. Vanilla \n2. Chocolate \n3. Coffee \n4. Say it's your birthday and see if you get free ice cream "
+    puts "1. Coffee \n2. Chocolate \n3. Vanilla \n4. Say it's your birthday and see if you get free ice cream "
+    print "Please put the number that correlates to the answer you want to choose: "
     choice = gets.chomp
     choice = choice.to_i
     if choice == 1
@@ -320,7 +333,7 @@ def icecream()
         icecream_topping()
     elsif choice == 3
         $score << choice
-        puts "You still want caffine in your ice cream? Please sleep. " 
+        puts "If you get many scoops do you think it will look like a snowman? "
         cone()
         icecream_topping()
     elsif choice == 4 

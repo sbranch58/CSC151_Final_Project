@@ -9,6 +9,10 @@ manga()
 Highest score possible for Downtown: 42
 Lowest score possible for Downtown: 13
 - want to keep track so it will be easier to know how to categorize the averages for the major
+
+averages that are possible in downtown section
+lowest average possible: 13/13 = 1
+highest average possible: 42/13 = 3.23076923077 = 3
 =end
 
 =begin
@@ -22,7 +26,7 @@ class Downtown
     # this is the first part of the event that asks the user where they want to go and will branch off into different things
     def down() 
         puts "You now have your first day downtown in Northampton for the semester. Where do you plan to go? "
-        print "1. Raven Bookstore \n2. Lime Red to get boba tea \n3. Getting ice cream at Herrell's \n"
+        print "1. Herrell's to get ice cream \n2. Lime Red to get boba tea \n3. Raven's Bookstore \n"
         print "Please put the number that correlates to the answer you want to choose: "
         choice = gets.chomp
         # changed it to an integer because at first it gets it as a string so it messed with the if else since it wasn't iterating through because it didn't see it as an integer 1, but the string 1 so it would jump straight to the else statement
@@ -35,7 +39,7 @@ class Downtown
             $score << choice
             # puts "the value of choice1 is: #{choice}"
             # puts "run raven() "
-            raven() 
+            icecream() 
         when 2
             $score << choice 
             # puts "run boba() "
@@ -43,7 +47,7 @@ class Downtown
         when 3
             $score << choice 
             # puts "run icecream()"
-            icecream()
+            raven()
         else
             print "This is not a choice. Please try again. \n"
             # puts "rerunning down() "
