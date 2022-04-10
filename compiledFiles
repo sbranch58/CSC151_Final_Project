@@ -1,0 +1,12 @@
+#File for compiling the scenarios and graphics together 
+
+Potential Instructions for the user to download application on their computer 
+
+1. require 'require_all'
+
+2. Then execute 
+
+$ gem install require_all
+
+
+
