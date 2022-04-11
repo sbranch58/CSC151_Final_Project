@@ -1,8 +1,12 @@
+# lobal variable for determining major result
+
+$score = []
+
 #choices for visiting the apple orchard 
 def orchardVisit() 
-    puts "Welcome to the orchard, we are glad you are here! What do you want to do"
+    puts "Welcome to the orchard, we are glad you are here! We have a wide range of fun activities for your enjoyment. What do you want to do?"
     orchardOptions =" 
-     1. Apples
+     1. Pick apples
      2. Visit the farm
      3. Eat donuts"
     puts orchardOptions
@@ -11,10 +15,13 @@ def orchardVisit()
     
     case choice #switch statement
     when 1
+      $score << choice
       puts "You pick bushels of apples that you plan to make into treats!" 
     when 2
+      $score << choice
       puts "The orchard has a adjacent farm and you help out with the feeding of animals"
     when 3
+      $score << choice
       puts "The orchard has homemade apple cider donuts - lets have a picnic" 
     end
   end
@@ -32,17 +39,20 @@ def orchardVisit()
     
     case choice  #switch statement
     when 1
+      $score << choice
       puts "Your amazing baking skills made 3 perfect pies"
     when 2
+      $score << choice
       puts "You can't go wrong with apple crumble and vanilla ice cream"
     when 3
+      $score << choice
       puts "Yummy bite-size tarts for everyone" 
     end
   end
   
   #choices for doing hiking with your house 
   def outdoorHiking()
-    puts "You got your hiking boots, hat, and snacks. What location will you choose? Pick a number"
+    puts "You got your hiking boots, hat, and energizing snacks! What location will you choose for hiking? Pick a number"
     hikingOptions ="
      1. Paradise Pond
      2. Holyoke State Park in Holyoke
@@ -53,10 +63,13 @@ def orchardVisit()
     
     case choice #switch statement
     when 1
+      $score << choice
       puts "Somewhere local...after the hiking, lets go kayaking"
     when 2
+      $score << choice
       puts "30 miles of blazed trails...Holyoke State Park is the place"
     when 3
+      $score << choice
       puts "Visit the beauty  at Amherst's Robert Frost Trail" 
     end
   end
@@ -80,13 +93,18 @@ def orchardVisit()
     choice = choice.to_i
     case choice  #switch statement for the options
     when 1
+      $score << choice
       orchardVisit()
       break
     when 2
+      $score << choice
       houseBaking()
       break
     when 3
+      $score << choice
       outdoorHiking()
       break
+    else
+       puts "Sorry, please enter a given number."
     end
   end
