@@ -1,0 +1,56 @@
+require 'ruby2d'
+
+#Below are the options for the first window Convocation scenario that will show up.
+
+set width: 1400 # width of window
+set height: 1000 #height of window
+
+
+set title: 'Convocation', background: 'yellow'
+
+background = Text.new('Sophomoresss, juniorrrs, seniorrs...! Welcome to Convocation. A time to celebrate for some the beggining of a new era, for others, the end of one. The best Smith tradition to showcase the power of a liberal arts education and the unique community of Smith College. Its your first Convocation, so much to do, so what do you do?', x: 40, y: 40, size: 25) 
+
+class Convocation
+    def display 
+
+        #option 1
+        
+        @firstbox = Image.new(
+            'sleep_in.png',
+            x: 50, y: 190, 
+            width: 600, height: 350, 
+            z: 1
+        )
+        message1 = Text.new('Sleep in', x: 300, y: 545, color: 'white', size: 25, z: 2) 
+
+        #option 2
+        @secondbox = Image.new(
+            'lost.jpg',
+            x: 780, y: 190, 
+            width: 600, height: 350, 
+            z: 3
+        )
+        message2 = Text.new('Get lost', x: 990, y: 545, color: 'white', size: 25, z: 4) 
+
+        # option 3
+        @thirdbox = Image.new(
+            'convocation.jpg',
+            x: 50, y: 585, 
+             width: 600, height: 350, 
+            z: 5
+        )
+        message3 = Text.new('Attend Convocation', x: 280, y: 950, color: 'white', size: 25, z: 6) 
+
+            # option 4
+            
+        @fourthbox = Image.new(
+            'toodrunk.jpg',
+            x: 780, y: 585, 
+            width: 600, height: 350, 
+            z: 7
+        )
+        message4 = Text.new('Get too drunk', x: 990, y: 950, color: 'white', size: 25, z: 8) 
+    end
+end
+
+show 
