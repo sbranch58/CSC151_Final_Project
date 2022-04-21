@@ -13,7 +13,7 @@ class ArtInfo # display art picture and adjunct txt
     def display
         @artInfo = Image.new(
             # i feel like having an image of apple crumble feels weird here
-            './MountainDay/Images/2applecrumble.jpg',
+            './MountainDay/Images/2art.jpg',
             x: 50, y: 210, 
             width: 1300, height: 700, 
             z: 7

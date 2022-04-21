@@ -13,7 +13,7 @@ require_relative "newline.rb"
 class DowntownInfo
     def display
         @downtownInfo = Image.new( # display picture of the downtown and txt
-            './MountainDay/Images/2applecrumble.jpg',
+            './MountainDay/Images/2downtown.jpg',
             x: 50, y: 210, 
             width: 1300, height: 700, 
             z: 1
