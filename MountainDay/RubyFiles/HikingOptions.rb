@@ -75,11 +75,65 @@ class HikingOptions
             $holyokeInfo = HolyokeInfo.new
             $holyokeInfo.display
     
-        else (@mountain.contains? x, y)
+        elsif (@mountain.contains? x, y)
             $state = 25
             $score << 4
             $mountainInfo = MountainInfo.new
             $mountainInfo.display
         end
     end
+
+    def over(x, y)
+        if (@paradise.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @paradise.width = 650
+            @paradise.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @paradise.width = 600
+            @paradise.height = 350
+            # @image_border.remove
+        end
+        
+        if (@amherst.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @amherst.width = 650
+            @amherst.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @amherst.width = 600
+            @amherst.height = 350
+            # @image_border.remove
+        end
+
+        if (@holyoke.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @holyoke.width = 650
+            @@holyoke.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @holyoke.width = 600
+            @holyoke.height = 350
+            # @image_border.remove
+        end
+
+        if (@mountain.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @mountain.width = 650
+            @mountain.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @mountain.width = 600
+            @mountain.height = 350
+            # @image_border.remove
+        end
+    end 
 end

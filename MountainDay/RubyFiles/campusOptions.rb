@@ -14,8 +14,8 @@ set height: 500 #height of window
 class CampusOptions 
     def display
         #set title: 'On Campus Activities', background: 'navy'
-        background = Text.new('On Campus Activities', x: 450, y: 20, size: 50) 
-        heading1 = Text.new('You decided to enjoy some on campus activities with friends. What will you do/', x: 65, y: 80, color: 'black', size: 30)  
+        background = Text.new('On Campus Activities', x: 450, y: 20, color: 'black', size: 50) 
+        heading1 = Text.new('You decided to enjoy some on campus activities with friends. What will you do?', x: 65, y: 80, color: 'black', size: 30)  
         
         #option1 paradise
         @art = Image.new(
@@ -75,11 +75,65 @@ class CampusOptions
             $bikeInfo = BikeInfo.new
             $bikeInfo.display
     
-        else (@SCMA.contains? x, y)
+        elsif (@SCMA.contains? x, y)
             $state = 30
             $score << 4
             $SCMAInfo = SCMAInfo.new
             $SCMAInfo.display
         end
     end
+
+    def over(x, y)
+        if (@art.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @art.width = 650
+            @art.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @art.width = 600
+            @art.height = 350
+            # @image_border.remove
+        end
+        
+        if (@downtown.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @downtown.width = 650
+            @downtown.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @downtown.width = 600
+            @downtown.height = 350
+            # @image_border.remove
+        end
+
+        if (@biking.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @biking.width = 650
+            @biking.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @biking.width = 600
+            @biking.height = 350
+            # @image_border.remove
+        end
+
+        if (@SCMA.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @SCMA.width = 650
+            @SCMA.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @SCMA.width = 600
+            @SCMA.height = 350
+            # @image_border.remove
+        end
+    end 
 end

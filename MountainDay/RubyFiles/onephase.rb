@@ -38,7 +38,7 @@ class MountainDay # class for the 4 main options: hiking, baking, orchard, and c
         
         heading1 = Text.new('Ringing the bells!', x: 450, y: 20, color: 'black', size: 50) 
         heading2 = Text.new("You wake up to the sound of ringing bells...its Mountain Day!", x: 250, y: 90, color: 'black', size: 30)  
-        heading3 = Text.new("What are your plans on this glorious day? Pick a number", x: 250, y: 130, color: 'black', size: 30) 
+        heading3 = Text.new("What are your plans on this glorious day? ", x: 250, y: 130, color: 'black', size: 30) 
         
         # option 1 for hiking 
         @hiking = Image.new(
@@ -103,4 +103,58 @@ class MountainDay # class for the 4 main options: hiking, baking, orchard, and c
             $campusOptions.display
         end
     end
+
+    def over(x, y)
+        if (@baking.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @baking.width = 650
+            @baking.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @baking.width = 600
+            @baking.height = 350
+            # @image_border.remove
+        end
+        
+        if (@hiking.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @hiking.width = 650
+            @hiking.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @hiking.width = 600
+            @hiking.height = 350
+            # @image_border.remove
+        end
+
+        if (@orchard.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @orchard.width = 650
+            @orchard.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @orchard.width = 600
+            @orchard.height = 350
+            # @image_border.remove
+        end
+
+        if (@campus.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @campus.width = 650
+            @campus.height = 365
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @campus.width = 600
+            @campus.height = 350
+            # @image_border.remove
+        end
+    end 
 end

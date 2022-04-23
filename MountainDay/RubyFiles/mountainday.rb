@@ -11,7 +11,7 @@ class MountainDay
   def display
 
     heading1 = Text.new('Ringing the bells!', x: 180, y: 10, size: 30) 
-    heading2 = Text.new("You wake up to the sound of ringing bells...its Mountain Day! What are your plans on this glorious day? Pick a number", x: 65, y: 50, color: 'black', size: 20)  
+    heading2 = Text.new("You wake up to the sound of ringing bells...its Mountain Day! What are your plans on this glorious day?", x: 65, y: 50, color: 'black', size: 20)  
 
     # option 1
     @hiking = Image.new(

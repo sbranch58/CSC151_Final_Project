@@ -84,6 +84,60 @@ class OrchardOptions
       $hayrideInfo.display
     end
   end
+
+  def over(x, y)
+    if (@farm.contains? x, y) 
+        # $hover_state = 1
+        # @convocation.color = "#56BBF1"
+        @farm.width = 650
+        @farm.height = 365
+        # @image_border.add
+        # puts "changing @convocation when hovered "
+    else 
+        @farm.width = 600
+        @farm.height = 350
+        # @image_border.remove
+    end
+    
+    if (@pickapples.contains? x, y) 
+        # $hover_state = 1
+        # @convocation.color = "#56BBF1"
+        @pickapples.width = 650
+        @pickapples.height = 365
+        # @image_border.add
+        # puts "changing @convocation when hovered "
+    else 
+        @pickapples.width = 600
+        @pickapples.height = 350
+        # @image_border.remove
+    end
+
+    if (@picnic.contains? x, y) 
+        # $hover_state = 1
+        # @convocation.color = "#56BBF1"
+        @picnic.width = 650
+        @picnic.height = 365
+        # @image_border.add
+        # puts "changing @convocation when hovered "
+    else 
+        @picnic.width = 600
+        @picnic.height = 350
+        # @image_border.remove
+    end
+
+    if (@hayride.contains? x, y) 
+        # $hover_state = 1
+        # @convocation.color = "#56BBF1"
+        @hayride.width = 650
+        @hayride.height = 365
+        # @image_border.add
+        # puts "changing @convocation when hovered "
+    else 
+        @hayride.width = 600
+        @hayride.height = 350
+        # @image_border.remove
+    end
+end 
 end
 
 

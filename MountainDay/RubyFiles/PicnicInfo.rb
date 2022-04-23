@@ -20,7 +20,8 @@ class PicnicInfo # display the picnic pic and txt
         )
         heading1 = Text.new('Have a picnic', x: 550, y: 50, color: 'black', size: 45, z: 2)  
         heading2 = Text.new("You and your friends find a nice hill overlooking the orchard for a light picnic...the scene is wonderful", x: 145, y: 120, color: 'black', size: 25, z: 3)
-        heading3 = Text.new("Click anywhere to leave page", x: 550, y: 930, color: 'black', size: 25, z: 4)
+        heading3 = Text.new("Click the image to continue ", x: 550, y: 930, color: 'black', size: 25, z: 4)
+
 
         # score = Text.new("#{$state}", x: 340, y: 560, size: 20, color: 'black', z: 1)
         # puts "displaying picnic"
@@ -29,7 +30,7 @@ class PicnicInfo # display the picnic pic and txt
   
     def process_click(x,y) # if user clicks, then move to Downtown
         if (@picnicInfo.contains? x, y)
-            $score << 3
+            # $score << 3
             # puts "should start downtown_main"
             # $start = Destination.new
             # $start.display
@@ -42,5 +43,20 @@ class PicnicInfo # display the picnic pic and txt
             # $start.display
         end
     end
+
+    def over(x, y)
+        if (@picnicInfo.contains? x, y) 
+            # $hover_state = 1
+            # @convocation.color = "#56BBF1"
+            @picnicInfo.width = 1350
+            @picnicInfo.height = 715
+            # @image_border.add
+            # puts "changing @convocation when hovered "
+        else 
+            @picnicInfo.width = 1300
+            @picnicInfo.height = 700
+            # @image_border.remove
+        end
+      end 
 end 
   
