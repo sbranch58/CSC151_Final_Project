@@ -18,8 +18,7 @@ The first diagram on the left explains the flow of the windows that will take pl
 
 **Part A: Environment Configuration:**
 
-Follow the general steps in the next section to set up your local development environment from scratch. Based on your type of machine, please follow one of the guides listed below to help you complete the steps for setting up Smith Journey on your machine.
-
+- Follow the general steps in the next section to set up your local development environment from scratch. Based on your type of machine, please follow one of the guides listed below to help you complete the steps for setting up Smith Journey on your machine.
 - Install Ruby 3.1.1
 - Check the following webpage and follow the instructions: https://www.ruby-lang.org/en/documentation/installation/
 - Use asdf on Mac/Linux systems
