@@ -9,14 +9,12 @@ A quiz game that predicts the user’s future possible major based on their choi
 - Once you are decided which answer you will be clicking on, select the image associated with your choice. Repeat the process.  
 - After you are done, your suggested major will pop up with some information about the department webpage. 
 
-**Functional Example Game:**
+## **Functional Example Game:**
 
 The first diagram on the left explains the flow of the windows that will take place on the user's screen based on the three smith traditons scenarios created. The second diagram shows the pseudocode that was initially thought of to make the game quiz work. 
-
 ![diagram](diagram.png)
 
-
-**Part A: Environment Configuration:**
+## **Part A: Environment Configuration:**
 
 - Follow the general steps in the next section to set up your local development environment from scratch. Based on your type of machine, please follow one of the guides listed below to help you complete the steps for setting up Smith Journey on your machine.
 - Install Ruby 3.1.1
@@ -27,7 +25,7 @@ The first diagram on the left explains the flow of the windows that will take pl
 - **cd** smithjourney  then ruby -v to check your version
 - On Mac it is strongly recommended that you use asdf to install Ruby. On Windows you should set up your environment through the Windows Subsystem for Linux (WSL). - The guides above explain how to do so in detail.
 
-**Part B: Install Ruby2d**
+## **Part B: Install Ruby2d**
 Follow the instructions to install Ruby2d on your machine. 
 https://www.ruby2d.com/learn/get-started/
 
@@ -38,7 +36,7 @@ https://www.ruby2d.com/learn/get-started/
 - Re-play if you would like a backup major! 
 
 
-**Main Functions Description**
+## **Main Functions Description**
 
 *mouse_down.rb*: This file contains a :mouse_down function that checks the number that $state is to decide what class to make for the questions the user picks. The $state acts as an ID for the questions and for the screen to switch between and allow the user to click on the image options we needed to check the ID of the question. Uses clicks(x, y) or process_click(x, y) function.
 
