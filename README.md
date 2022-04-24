@@ -4,10 +4,10 @@ A quiz game that predicts the user’s future possible major based on their choi
 ![Smithjourney]()
 
 ## **How to play the game:**
--Choose your avatar
--Follow the “smith journey”
--Once you get to the first Smith building, you will be prompted to answer the first set of questions and will repeat the process in two other different scenarios.
--After you are done, your suggested major will pop up with some information about the department webpage. 
+- Choose your avatar
+- Follow the “smith journey”
+- Once you get to the first Smith building, you will be prompted to answer the first set of questions and will repeat the process in two other different scenarios.
+- After you are done, your suggested major will pop up with some information about the department webpage. 
 
 **Functional Example Game:**
 
@@ -16,22 +16,24 @@ A quiz game that predicts the user’s future possible major based on their choi
 **Part A: Environment Configuration:**
 
 Follow the general steps in the next section to set up your local development environment from scratch. Based on your type of machine, please follow one of the guides listed below to help you complete the steps for setting up Smith Journey on your machine.
-Install Ruby 3.1.1
-Check the following webpage and follow the instructions: https://www.ruby-lang.org/en/documentation/installation/
-Use asdf on Mac/Linux systems
-Use the WSL on Windows systems
-Make sure you are using Ruby 3.1.1 before proceeding:
-cd smithjourney  then ruby -v to check your version
-On Mac it is strongly recommended that you use asdf to install Ruby. On Windows you should set up your environment through the Windows Subsystem for Linux (WSL). The guides above explain how to do so in detail.
+
+- Install Ruby 3.1.1
+- Check the following webpage and follow the instructions: https://www.ruby-lang.org/en/documentation/installation/
+- Use asdf on Mac/Linux systems
+- Use the WSL on Windows systems
+- Make sure you are using Ruby 3.1.1 before proceeding:
+- **cd** smithjourney  then ruby -v to check your version
+- On Mac it is strongly recommended that you use asdf to install Ruby. On Windows you should set up your environment through the Windows Subsystem for Linux (WSL). - The guides above explain how to do so in detail.
 
 **Part B: Install Ruby2d**
 Follow the instructions to install Ruby2d on your machine. 
 https://www.ruby2d.com/learn/get-started/
-Make sure to keep a separate file with both the commands and steps taken since Ruby2d might come with some complications depending on the type of system you have on your machine. Thus, it is important to keep track of the steps taken, so it is easier to look back when lost.
-Should run the smithjourney.rb file and make sure you are in the correct directory and the first directory is final
-Each event is in a different folder, such as Downtown, with its ruby files and a folder containing images images 
-Click on the images to make your choices, and based on those choices you will get your “destined major” 
-Re-play if you would like a backup major! 
+
+- Make sure to keep a separate file with both the commands and steps taken since Ruby2d might come with some complications depending on the type of system you have on your machine. Thus, it is important to keep track of the steps taken, so it is easier to look back when lost.
+- Should run the smithjourney.rb file and make sure you are in the correct directory and the first directory is final
+- Each event is in a different folder, such as Downtown, with its ruby files and a folder containing images images 
+- Click on the images to make your choices, and based on those choices you will get your “destined major” 
+- Re-play if you would like a backup major! 
 
 
 **Main Functions Description**
