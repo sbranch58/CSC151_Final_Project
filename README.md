@@ -11,6 +11,8 @@ A quiz game that predicts the user’s future possible major based on their choi
 
 **Functional Example Game:**
 
+The first diagram on the left explains the flow of the windows that will take place on the user's screen based on the three smith traditons scenarios created. The second diagram shows the pseudocode that was initially thought of to make the game quiz work. 
+
 ![diagram](diagram.png)
 
 
@@ -39,30 +41,30 @@ https://www.ruby2d.com/learn/get-started/
 
 **Main Functions Description**
 
-- *mouse_down.rb*
+*mouse_down.rb*
 
 This file contains a :mouse_down function that checks the number that $state is to decide what class to make for the questions the user picks. The $state acts as an ID for the questions and for the screen to switch between and allow the user to click on the image options we needed to check the ID of the question. Uses clicks(x, y) or process_click(x, y) function.
 
-- *hover_mouse.rb*
+*hover_mouse.rb*
 
 Is used to make the image options slightly bigger when the user has their mouse over an image option and then reverts it back to its original dimensions when the user’s mouse is not over the image. Uses over(x, y) function.
 
-- *display()*
+*display()*
 This creates the images and text for each question that will be displayed after the user makes a choice. 
 
-- *clicks(x, y) or process_click(x, y)*
+*clicks(x, y) or process_click(x, y)*
 
 This checks if a user clicks on an image by using .contains? To see if the user’s mouse is within an image. 
 
-- *over(x, y)*
+*over(x, y)*
 
 This checks if a user’s mouse is over an object to change the dimensions to make the object bigger and then revert it back when the user moves their mouse away. 
 
-- *calc_score()*
+*calc_score()*
 
 This takes all the values in the $score array and finds the average to store in a variable, user_score.
 
-- *check_major(user_score)*
+*check_major(user_score)*
 
 Check the average computed from the $score array, user_score, and based on that average major will give the user a random major from one of 3 arrays, $stem_majors, $humanities_major, $mixed_majors, that have 5 possible majors in them. 
 
