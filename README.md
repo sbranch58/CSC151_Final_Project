@@ -4,9 +4,9 @@ A quiz game that predicts the user’s future possible major based on their choi
 ![Smithjourney](smithjourney.png)
 
 ## **How to play the game:**
-- Choose your avatar
-- Follow the “smith journey”
-- Once you get to the first Smith building, you will be prompted to answer the first set of questions and will repeat the process in two other different scenarios.
+- Click on the start button.
+- Follow the “smith journey”, read promptly and carefully each window scenario. 
+- Once you are decided which answer you will be clicking on, select the image associated with your choice. Repeat the process.  
 - After you are done, your suggested major will pop up with some information about the department webpage. 
 
 **Functional Example Game:**
