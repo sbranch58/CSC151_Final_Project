@@ -11,19 +11,26 @@ class Toodrunk # class that holds functions to display options if you drink too 
         #option 1 that defines pic and txt
         @jmg= Image.new('./Convocation2/Images/jmg.jpg', x: 50, y: 190, width: 600, height: 350, z: 10)
         @message1 = draw_multiline_text("You attend Convocation at JMG with your friend's help", x: 25, y: 545, color: 'black', size: 25, z: 20) 
-
+        @choiceimage1 = Image.new("./Convocation2/Images/2jmg.jpg", x: 130, y: 230, width: 1100, height: 650)
+        @choiceimage1.remove
         #option 2 that defines pic and txt
         @eating = Image.new('./Convocation2/Images/eatingdrinking.jpg', x: 760, y: 190, width: 600, height: 350, z: 10)
         @message2 = draw_multiline_text("You decide to eat and drink water", x: 885, y: 545, color: 'black', size: 25, z: 20)
-
+        @choiceimage2 = Image.new("./Convocation2/Images/2water.jpg", x: 130, y: 230, width: 1100, height: 650)
+        @choiceimage2.remove
+        
         #option 3 that defines pic and txt
         @hangover= Image.new('./Convocation2/Images/hangover.jpg', x: 50, y: 585, width: 600, height: 350, z: 10)
         @message3 = draw_multiline_text("Don't remember anything - go to next day class\n with a bad headache", x: 35, y: 935, color: 'black', size: 25, z: 20)
-
+        @choiceimage3 = Image.new("./Convocation2/Images/2headache.jpg", x: 130, y: 230, width: 1100, height: 650)
+        @choiceimage3.remove
+        
         #option 4 that defines pic and txt
         @glitter= Image.new('./Convocation2/Images/glitter.jpg', x: 760, y: 585, width: 600, height: 350, z: 10)
         @message4 = draw_multiline_text("You put on more glitter and embrace\n Convocation", x: 845, y: 940, color: 'black', size: 25, z: 20)
-        
+        @choiceimage4 = Image.new("./Convocation2/Images/2glitter.jpg", x: 130, y: 230, width: 1100, height: 650)
+        @choiceimage4.remove
+
         # image option that appears at end
     end
 
@@ -32,8 +39,8 @@ class Toodrunk # class that holds functions to display options if you drink too 
             $score << 1
 
             txt1 = Text.new("Good Luck!", x: 600, y: 20, size: 70, color: 'black') 
-            @choiceimage = Image.new("./Convocation2/Images/2lost.jpg", x: 130, y: 230, width: 1100, height: 650)
-            @choiceimage.add
+            # @choiceimage = Image.new("./Convocation2/Images/2lost.jpg", x: 130, y: 230, width: 1100, height: 650)
+            @choiceimage1.add
             @response1 = draw_multiline_text("Good luck! Don't stumble into a random bush.", x: 85, y: 110, color: 'black', size: 50, z: 30) 
             @next_message = Text.new("Please click the page to continue your Smith adventure!", x: 300, y: 880, color: 'black', size: 30, z: 30) 
             
@@ -41,15 +48,16 @@ class Toodrunk # class that holds functions to display options if you drink too 
             $score << 2
 
             txt2 = Text.new("Water!", x: 620, y: 20, size: 70, color: "black")
-            @choiceimage = Image.new("./Convocation2/Images/2water.jpg", x: 130, y: 230, width: 1100, height: 650)
+            # @choiceimage2 = Image.new("./Convocation2/Images/2water.jpg", x: 130, y: 230, width: 1100, height: 650)
+            @choiceimage2.add
             @response2 = draw_multiline_text("Smart choice! First take care of yourself.", x: 100, y: 110, color: 'black', size: 50, z: 30) 
             @next_message = Text.new("Please click the page to continue your Smith adventure!", x: 300, y: 880, color: 'black', size: 30, z: 30) 
 
         elsif @hangover.contains? x, y # if option 3 has been clicked, calculate score and create new screen with info
             $score << 3
-
             txt2 = Text.new("Bad Headache", x: 580, y: 20, size: 70, color: 'black')
-            @choiceimage = Image.new("./Convocation2/Images/2headache.jpg", x: 130, y: 230, width: 1100, height: 650)
+            # @choiceimage3 = Image.new("./Convocation2/Images/2headache.jpg", x: 130, y: 230, width: 1100, height: 650)
+            @choiceimage3.add
             @response2 = draw_multiline_text("Hmm..try not to drink so much next time and drink some \n\nwater.", x: 85, y: 110, color: 'black', size: 50, z: 30) 
             @next_message = Text.new("Please click the page to continue your Smith adventure!", x: 300, y: 880, color: 'black', size: 30, z: 30) 
 
@@ -57,7 +65,8 @@ class Toodrunk # class that holds functions to display options if you drink too 
             $score << 4
 
             txt4 = Text.new("Glitter!", x: 620, y: 20, size: 70, color: 'black')
-            @choiceimage = Image.new("./Convocation2/Images/2glitter.jpg", x: 130, y: 230, width: 1100, height: 650)
+            # @choiceimage4 = Image.new("./Convocation2/Images/2glitter.jpg", x: 130, y: 230, width: 1100, height: 650)
+            @choiceimage4.add
             @response4 = draw_multiline_text("Time to shine and become extra sparkly with your glitter!", x: 85, y: 110, color: 'black', size: 50, z: 30) 
             @next_message = Text.new("Please click the page to continue your Smith adventure!", x: 300, y: 880, color: 'black', size: 30, z: 30) 
 
@@ -108,12 +117,36 @@ class Toodrunk # class that holds functions to display options if you drink too 
             @glitter.height = 350
         end
 
-        # if @choiceimage.contains? x, y
-            # @choiceimage.width = 1150
-            # @choiceimage.height = 665
-        # else  
-            # @choiceimage.width = 1100
-            # @choiceimage.height = 650
-        # end 
+        if @choiceimage1.contains? x, y
+            @choiceimage1.width = 1150
+            @choiceimage1.height = 665
+        else  
+            @choiceimage1.width = 1100
+            @choiceimage1.height = 650
+        end 
+
+        if @choiceimage2.contains? x, y
+            @choiceimage2.width = 1150
+            @choiceimage2.height = 665
+        else  
+            @choiceimage2.width = 1100
+            @choiceimage2.height = 650
+        end 
+
+        if @choiceimage3.contains? x, y
+            @choiceimage3.width = 1150
+            @choiceimage3.height = 665
+        else  
+            @choiceimage3.width = 1100
+            @choiceimage3.height = 650
+        end 
+
+        if @choiceimage4.contains? x, y
+            @choiceimage4.width = 1150
+            @choiceimage4.height = 665
+        else  
+            @choiceimage4.width = 1100
+            @choiceimage4.height = 650
+        end 
     end 
 end 

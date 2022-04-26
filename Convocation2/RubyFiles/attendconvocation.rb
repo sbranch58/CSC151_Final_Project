@@ -6,7 +6,8 @@ require "./MountainDay/RubyFiles/mountain_main.rb"
 
 class AttendConvocation # class that holds functions to display options if attended convocation
     def display() # display all content in this class 
-
+        # classtopping = $toppings.class
+        # puts "the class of $toppings is: #{classtopping} "
         #title and heading at the top of the page
         title = Text.new("You decided to attend...", x: 445, y: 20, color: "black", size: 50)
         question = draw_multiline_text("Against all odds, you decide to join the crowd to be part of Convocation. \nYou got the glitter and you are ready to scream, what else?", x: 150, y: 100, color: 'black', size: 30, z: 30) 
@@ -27,6 +28,7 @@ class AttendConvocation # class that holds functions to display options if atten
         @dancing = Image.new('./Convocation2/Images/overwhelmed.jpg', x: 30, y: 585, width: 600, height: 350, z: 10)
         @message3 = Text.new("Dance with Kmac", x: 250, y: 950, color: 'black', size: 25, z: 20)
         @choiceimage3 = Image.new("./Convocation2/Images/2dancing.jpg", x: 130, y: 230, width: 1100, height: 650)
+        @choiceimage3.remove
 
         #option 4 that defines pic and txt
         @convocation2 = Image.new('./Convocation2/Images/behave.jpg', x: 780, y: 585, width: 600, height: 350, z: 10)
@@ -64,10 +66,12 @@ class AttendConvocation # class that holds functions to display options if atten
             $score << 4
             @txt4 = Text.new("Convocation", x: 560, y: 20, size: 70, color: 'black')
             # @choiceimage4 = Image.new("./Convocation2/Images/2convocation.jpg", x: 145, y: 230, width: 1100, height: 650)
-            @choice4.add
+            @choiceimage4.add
             @response4 = draw_multiline_text("That's good! You still have more years of\n\n Convocation (...Hopefully!)", x: 100, y: 110, color: 'black', size: 50, z: 30) 
             @next_message = Text.new("Please click the page to continue your Smith adventure!", x: 300, y: 880, color: 'black', size: 30, z: 30) 
         else
+            # this method only seems to work sometimes and im not sure why
+            $state = 2
             $attendConvocation = AttendConvocation.new  # if user clicks outside of pic, call the Attend Convocation class again
             $attendConvocation.display
         end 

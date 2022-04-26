@@ -74,6 +74,7 @@ class Convocation  # class that holds functions to display options for convocati
             $getDrunk = Toodrunk.new # create new class 
             $getDrunk.display
         else
+            
             $convocation = Convocation.new # if the user clicks not picture, call convocation class 
             $convocation.display 
         end

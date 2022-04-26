@@ -38,7 +38,8 @@ class GetLost  # class that holds functions to display options if you get lost
             $score << 1
             txt1 = Text.new("Lost :(", x: 550, y: 20, size: 70, color: 'black')
             # @choiceimage1 = Image.new("./Convocation2/Images/2lost.jpg", x: 130, y: 230, width: 1100, height: 650)
-            @choiceimage1.add
+            # @choiceimage1.remove
+            # @choiceimage1.add
             @response1 = draw_multiline_text("Smart. You can never go wrong with calling campo. \n\nYou're so brave.", x: 85, y: 110, color: 'black', size: 50, z: 30) 
             @next_message = Text.new("Please click the page to continue your Smith adventure!", x: 300, y: 880, color: 'black', size: 30, z: 30) 
             

@@ -92,5 +92,18 @@ on :mouse_move do |event|
         $history.over(event.x, event.y) # calls history 
     when 42
         $picture.over(event.x, event.y)
+
+    when 43 
+        # if it is not a nil class run over()
+        # if the variable is nil that means the  class wasn't made so it sholdn't run that code/function
+        if $toppings.class != NilClass 
+            $toppings.over(event.x, event.y)
+        elsif $history.class != NilClass 
+            $history.over(event.x, event.y)
+        elsif $picture.class != NilClass 
+            $picture.over(event.x, event.y)
+        elsif $snacks.class != NilClass 
+            $snacks.over(event.x, event.y)
+        end
     end
 end
