@@ -10,6 +10,7 @@ song.loop = true # loop through the song when completed
 song.play
 
 tick = 0
+$state = 0
 
 #COVER PAGE ------------------------------------------------------------------------------------------------------------------------------
 set title: 'A Smith Journey' # sets the window for the entire game 
@@ -67,9 +68,19 @@ on :mouse_down do |event|
     )
     beginClick = Text.new('Click to begin quiz', x: 570, y: 825, color: 'black', size: 35, z: 9) # text on top of the button
   elsif (@button.contains? event.x, event.y) 
-    clear # if button is clicked, clear everything on this screen and call convocation 
-    convocation_main()
+    # there is a bug that if while playing the quiz you click around where the start button is it will go back to the start of the game even after removing the button or clearing the screen
+    # if the user is clicking on the button and $state is 0, start the game
+    if $state == 0
+      clear # if button is clicked, clear everything on this screen and call convocation 
+      puts "start of the game"
+      convocation_main()
+    end 
+
+    # @button.remove
+    # puts "remove button"
   end
+    # @button.remove
+    # puts "remove button"
 end
 
 update do # update the screen and make the bird interactive
@@ -78,7 +89,15 @@ update do # update the screen and make the bird interactive
         hero.y = Math.sin(tick/15) *150 + 380 # using math to measure the bird's position on screen and movement over sin
 
         background1.x -=2.5 # make the background move as bird flys 
+
+        # @button.remove
+        # puts "remove button"
     end
 end
 
 show
+
+=begin
+Resources
+- Waka helped with fixing the issue with the code looping over if you clicked around the start button location
+=end
